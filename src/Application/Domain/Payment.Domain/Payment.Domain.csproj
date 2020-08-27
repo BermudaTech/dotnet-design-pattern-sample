@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Core\Payment.Core.Enumeration\Payment.Core.Enumeration.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Bermuda.Core">
+      <HintPath>..\..\..\..\lib\Bermuda.Core.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
