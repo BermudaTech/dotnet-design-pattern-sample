@@ -4,8 +4,9 @@ namespace Payment.Domain.Entity
 {
     public class BankBin : EntityBaseWithLog
     {
+        public virtual long BankId { get; protected set; }
         public virtual Bank Bank { get; protected set; }
-        public virtual int BinCode { get; protected set; }
+        public virtual int BinNumber { get; protected set; }
         public virtual string CardType { get; protected set; }
         public virtual string Organization { get; protected set; }
         public virtual bool IsCommercialCard { get; protected set; }
@@ -14,7 +15,7 @@ namespace Payment.Domain.Entity
 
         public BankBin(
             Bank bank,
-            int binCode,
+            int binNumber,
             string cardType,
             string organization,
             bool isCommercialCard,
@@ -22,7 +23,7 @@ namespace Payment.Domain.Entity
             bool isActive)
         {
             Bank = bank;
-            BinCode = binCode;
+            BinNumber = binNumber;
             CardType = cardType;
             Organization = organization;
             IsCommercialCard = isCommercialCard;
@@ -32,7 +33,7 @@ namespace Payment.Domain.Entity
 
         public void UpdateBankBin(
             Bank bank,
-            int binCode,
+            int binNumber,
             string cardType,
             string organization,
             bool isCommercialCard,
@@ -40,7 +41,7 @@ namespace Payment.Domain.Entity
             bool isActive)
         {
             Bank = bank;
-            BinCode = binCode;
+            BinNumber = binNumber;
             CardType = cardType;
             Organization = organization;
             IsCommercialCard = isCommercialCard;

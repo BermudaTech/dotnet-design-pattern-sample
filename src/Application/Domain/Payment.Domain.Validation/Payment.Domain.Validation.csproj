@@ -8,4 +8,10 @@
     <ProjectReference Include="..\Payment.Domain\Payment.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="Bermuda.Core">
+      <HintPath>..\..\..\..\lib\Bermuda.Core.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 
 namespace Payment.Domain.Repository
 {
-    public interface IBankBinRepository : IRepository<BankBin>
+    public interface IBankProviderRepository : IRepository<BankProvider>
     {
-        Task<BankBin> GetByBinNumberAsync(IUnitOfWork unitOfWork, int binNumber);
+        Task<BankProvider> GetByBankIdAsync(IUnitOfWork unitOfWork, long bankId);
     }
 }

@@ -12,7 +12,8 @@ namespace Payment.Domain.EntityMapping.Mapping
 
             builder.HasMany(x => x.BankBins)
                    .WithOne(x => x.Bank)
-                   .IsRequired();
+                   .IsRequired()
+                   .HasForeignKey(x => x.BankId);
 
             builder.HasMany(x => x.BankProviders)
                    .WithOne(x => x.Bank)

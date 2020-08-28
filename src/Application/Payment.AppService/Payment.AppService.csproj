@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\Payment.Core.Contract\Payment.Core.Contract.csproj" />
+    <ProjectReference Include="..\Domain\Payment.Domain\Payment.Domain.csproj" />
+    <ProjectReference Include="..\Payment.AppService.Contract\Payment.AppService.Contract.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Bermuda.Core">
+      <HintPath>..\..\..\lib\Bermuda.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Bermuda.Core.Contract">
+      <HintPath>..\..\..\lib\Bermuda.Core.Contract.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

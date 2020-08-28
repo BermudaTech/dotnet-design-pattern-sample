@@ -5,7 +5,7 @@ using Payment.Core.Enumeration;
 
 namespace Payment.Integration.IPARA
 {
-    public class IPARAPaymentIntegration : IPayment
+    public class IPARAPaymentIntegration : IPaymentProvider
     {
         public ProviderType ProviderType => ProviderType.IPARA;
 

@@ -13,7 +13,8 @@ namespace Payment.Domain.EntityMapping.Mapping
 
             builder.HasMany(x => x.BankProviders)
                    .WithOne(x => x.Provider)
-                   .IsRequired();
+                   .IsRequired()
+                   .HasForeignKey(x => x.ProviderId);
         }
     }
 }

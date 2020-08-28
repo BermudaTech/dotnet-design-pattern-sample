@@ -1,0 +1,51 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.7" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.1.7" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="3.1.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\Payment.Core.Contract\Payment.Core.Contract.csproj" />
+    <ProjectReference Include="..\..\Core\Payment.Core.Enumeration\Payment.Core.Enumeration.csproj" />
+    <ProjectReference Include="..\..\Integration\Payment.Integration.EST\Payment.Integration.EST.csproj" />
+    <ProjectReference Include="..\..\Integration\Payment.Integration.IPARA\Payment.Integration.IPARA.csproj" />
+    <ProjectReference Include="..\..\Integration\Payment.Integration.MPI\Payment.Integration.MPI.csproj" />
+    <ProjectReference Include="..\..\Integration\Payment.Integration.PAYTEN\Payment.Integration.PAYTEN.csproj" />
+    <ProjectReference Include="..\Domain\Payment.Domain.EntityMapping\Payment.Domain.EntityMapping.csproj" />
+    <ProjectReference Include="..\Domain\Payment.Domain.EntityMigration\Payment.Domain.EntityMigration.csproj" />
+    <ProjectReference Include="..\Domain\Payment.Domain.Repository\Payment.Domain.Repository.csproj" />
+    <ProjectReference Include="..\Domain\Payment.Domain.Validation\Payment.Domain.Validation.csproj" />
+    <ProjectReference Include="..\Domain\Payment.Domain\Payment.Domain.csproj" />
+    <ProjectReference Include="..\Payment.AppService.Contract\Payment.AppService.Contract.csproj" />
+    <ProjectReference Include="..\Payment.AppService\Payment.AppService.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Bermuda.Core">
+      <HintPath>..\..\..\lib\Bermuda.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Bermuda.Core.Contract">
+      <HintPath>..\..\..\lib\Bermuda.Core.Contract.dll</HintPath>
+    </Reference>
+    <Reference Include="Bermuda.Infrastructure.Database.EF">
+      <HintPath>..\..\..\lib\Bermuda.Infrastructure.Database.EF.dll</HintPath>
+    </Reference>
+    <Reference Include="Bermuda.Infrastructure.Logger.Log4Net">
+      <HintPath>..\..\..\lib\Bermuda.Infrastructure.Logger.Log4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Bermuda.Infrastructure.Mapper.AutoMapper">
+      <HintPath>..\..\..\lib\Bermuda.Infrastructure.Mapper.AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Bermuda.Infrastructure.Serialization">
+      <HintPath>..\..\..\lib\Bermuda.Infrastructure.Serialization.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

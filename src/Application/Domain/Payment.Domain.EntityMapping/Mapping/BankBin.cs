@@ -7,7 +7,7 @@ namespace Payment.Domain.EntityMapping.Mapping
     {
         public override void EntityConfigure(EntityTypeBuilder<Entity.BankBin> builder)
         {
-            builder.Property(x => x.BinCode);
+            builder.Property(x => x.BinNumber);
             builder.Property(x => x.CardType).IsRequired().HasMaxLength(10);
             builder.Property(x => x.Organization).IsRequired().HasMaxLength(25);
             builder.Property(x => x.IsCommercialCard);

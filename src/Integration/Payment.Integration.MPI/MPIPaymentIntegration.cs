@@ -5,7 +5,7 @@ using Payment.Core.Enumeration;
 
 namespace Payment.Integration.MPI
 {
-    public class MPIPaymentIntegration : IPayment
+    public class MPIPaymentIntegration : IPaymentProvider
     {
         public ProviderType ProviderType => ProviderType.MPI;
 

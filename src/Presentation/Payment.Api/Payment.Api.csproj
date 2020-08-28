@@ -4,5 +4,19 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+    <Folder Include="Core\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Application\Payment.AppService.Bootstrapper\Payment.AppService.Bootstrapper.csproj" />
+    <ProjectReference Include="..\..\Core\Payment.Core.Contract\Payment.Core.Contract.csproj" />
+  </ItemGroup>
+
 
 </Project>

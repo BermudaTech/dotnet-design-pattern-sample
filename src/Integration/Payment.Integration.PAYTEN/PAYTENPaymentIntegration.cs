@@ -5,7 +5,7 @@ using Payment.Core.Enumeration;
 
 namespace Payment.Integration.PAYTEN
 {
-    public class PAYTENPaymentIntegration : IPayment
+    public class PAYTENPaymentIntegration : IPaymentProvider
     {
         public ProviderType ProviderType => ProviderType.PAYTEN;
 

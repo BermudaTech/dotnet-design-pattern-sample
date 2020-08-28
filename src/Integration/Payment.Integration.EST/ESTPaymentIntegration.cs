@@ -5,7 +5,7 @@ using Payment.Core.Enumeration;
 
 namespace Payment.Integration.EST
 {
-    public class ESTPaymentIntegration : IPayment
+    public class ESTPaymentIntegration : IPaymentProvider
     {
         public ProviderType ProviderType => ProviderType.EST;
 
