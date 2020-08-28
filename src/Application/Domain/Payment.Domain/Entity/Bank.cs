@@ -7,6 +7,7 @@ namespace Payment.Domain.Entity
     {
         public virtual int Code { get; protected set; }
         public virtual string Name { get; protected set; }
+        public virtual ICollection<BankBin> BankBins { get; protected set; }
         public virtual ICollection<BankProvider> BankProviders { get; protected set; }
 
         public Bank() { }

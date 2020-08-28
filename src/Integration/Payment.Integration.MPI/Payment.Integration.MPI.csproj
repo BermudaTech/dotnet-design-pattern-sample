@@ -5,17 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Core\Payment.Core.Enumeration\Payment.Core.Enumeration.csproj" />
+    <ProjectReference Include="..\..\Core\Payment.Core.Contract\Payment.Core.Contract.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Reference Include="Bermuda.Core">
-      <HintPath>..\..\..\..\lib\Bermuda.Core.dll</HintPath>
+      <HintPath>..\..\..\lib\Bermuda.Core.dll</HintPath>
     </Reference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Service\" />
   </ItemGroup>
 
 </Project>
