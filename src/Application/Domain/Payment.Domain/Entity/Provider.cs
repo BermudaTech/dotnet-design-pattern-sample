@@ -10,6 +10,8 @@ namespace Payment.Domain.Entity
         public virtual ProviderType ProviderType { get; protected set; }
         public virtual ICollection<BankProvider> BankProviders { get; protected set; }
 
+        public Provider() { }
+
         public Provider(
             string name,
             ProviderType providerType)

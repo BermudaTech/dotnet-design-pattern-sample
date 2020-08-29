@@ -1,0 +1,63 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="appsettings.Development.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="appsettings.Development.json">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.7.1" />
+    <PackageReference Include="Moq" Version="4.14.5" />
+    <PackageReference Include="xunit" Version="2.4.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="coverlet.collector" Version="1.3.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Application\Domain\Payment.Domain.Repository\Payment.Domain.Repository.csproj" />
+    <ProjectReference Include="..\..\Application\Domain\Payment.Domain.Validation\Payment.Domain.Validation.csproj" />
+    <ProjectReference Include="..\..\Application\Payment.AppService.Contract\Payment.AppService.Contract.csproj" />
+    <ProjectReference Include="..\..\Application\Payment.AppService\Payment.AppService.csproj" />
+    <ProjectReference Include="..\..\Integration\Payment.Integration.EST\Payment.Integration.EST.csproj" />
+    <ProjectReference Include="..\..\Integration\Payment.Integration.IPARA\Payment.Integration.IPARA.csproj" />
+    <ProjectReference Include="..\..\Integration\Payment.Integration.MPI\Payment.Integration.MPI.csproj" />
+    <ProjectReference Include="..\..\Integration\Payment.Integration.PAYTEN\Payment.Integration.PAYTEN.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Bermuda.Core">
+      <HintPath>..\..\..\lib\Bermuda.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Bermuda.Core.Contract">
+      <HintPath>..\..\..\lib\Bermuda.Core.Contract.dll</HintPath>
+    </Reference>
+    <Reference Include="Bermuda.Infrastructure.Database.EF">
+      <HintPath>..\..\..\lib\Bermuda.Infrastructure.Database.EF.dll</HintPath>
+    </Reference>
+    <Reference Include="Bermuda.Infrastructure.Mapper.AutoMapper">
+      <HintPath>..\..\..\lib\Bermuda.Infrastructure.Mapper.AutoMapper.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

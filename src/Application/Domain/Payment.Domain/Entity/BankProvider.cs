@@ -2,12 +2,14 @@
 
 namespace Payment.Domain.Entity
 {
-    public class BankProvider : EntityBaseWithLog
+    public class BankProvider : EntityBase
     {
         public virtual Bank Bank { get; protected set; }
         public virtual Provider Provider { get; protected set; }
         public virtual long ProviderId { get; protected set; }
         public virtual string Configuration { get; protected set; }
+
+        public BankProvider() { }
 
         public BankProvider(
             Bank bank,

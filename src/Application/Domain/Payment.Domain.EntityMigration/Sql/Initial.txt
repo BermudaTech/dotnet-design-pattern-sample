@@ -1,0 +1,13 @@
+﻿insert into public."Bank" ("Guid", "StatusType", "Code", "Name") values ('e09f5b4b-cedd-462c-8e0f-5eb72bb7f29b', 1, 62, 'T. GARANTİ BANKASI A.Ş.');commit;
+insert into public."Bank" ("Guid", "StatusType", "Code", "Name") values ('14624e2b-e914-4ba3-848d-c7112d7ec2db', 1, 64, 'T. İŞ BANKASI A.Ş.');commit;
+
+insert into public."BankBin" ("Guid", "StatusType", "InsertedUser", "InsertedIp", "InsertedDate", "BankId", "BinNumber", "CardType", "Organization", "IsCommercialCard", "IsSupportInstallment", "IsActive") values ('3d85ba8a-7f2c-42bf-ac94-5b56995f62b0', 1, 1, '127.0.0.1', now(), (select "Id" from public."Bank" where "Code" = 62), 979236, 'DEBIT CARD', 'VISA', '0', '1', '1');commit;
+insert into public."BankBin" ("Guid", "StatusType", "InsertedUser", "InsertedIp", "InsertedDate", "BankId", "BinNumber", "CardType", "Organization", "IsCommercialCard", "IsSupportInstallment", "IsActive") values ('a89c58f6-a562-4dfb-b1c2-75ffd669440d', 1, 1, '127.0.0.1', now(), (select "Id" from public."Bank" where "Code" = 64), 979236, 'DEBIT CARD', 'VISA', '0', '1', '1');commit;
+
+insert into public."Provider" ("Guid", "StatusType", "Name", "ProviderType") values ('59492463-bc43-4d0a-92d7-9a28af4f9b07', 1, 'EST', 0);commit;
+insert into public."Provider" ("Guid", "StatusType", "Name", "ProviderType") values ('8679a954-961b-4767-851f-56ee654153f7', 1, 'MPI', 1);commit;
+insert into public."Provider" ("Guid", "StatusType", "Name", "ProviderType") values ('7de38da3-34b6-499b-8d3d-4bf0644770e0', 1, 'PAYTEN', 2);commit;
+insert into public."Provider" ("Guid", "StatusType", "Name", "ProviderType") values ('e98197af-36ca-48b4-93f5-ba7d8039a32f', 1, 'IPARA', 3);commit;
+
+insert into public."BankProvider" ("Guid", "StatusType", "BankId", "ProviderId", "Configuration") values ('59e35dc7-ac0f-456f-9248-556290e20fb3', 1, (select "Id" from public."Bank" where "Code" = 62), (select "Id" from public."Provider" where "ProviderType" = 0), '{"ClientId": "123456","StoreKey": "654321" }');commit;
+insert into public."BankProvider" ("Guid", "StatusType", "BankId", "ProviderId", "Configuration") values ('c0e3a8fa-0573-48a4-ad6e-aff34c3dbacd', 1, (select "Id" from public."Bank" where "Code" = 64), (select "Id" from public."Provider" where "ProviderType" = 1), '{"MerchantId": "123456","MerchantPassword": "654321"}');commit;
