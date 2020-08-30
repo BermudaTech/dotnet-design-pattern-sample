@@ -6,7 +6,7 @@ namespace Payment.Domain.Entity
     {
         public virtual long BankId { get; protected set; }
         public virtual Bank Bank { get; protected set; }
-        public virtual int BinNumber { get; set; }
+        public virtual int BinNumber { get; protected set; }
         public virtual string CardType { get; protected set; }
         public virtual string Organization { get; protected set; }
         public virtual bool IsCommercialCard { get; protected set; }

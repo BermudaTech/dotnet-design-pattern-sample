@@ -8,7 +8,7 @@ namespace Payment.Domain.Validation
 {
     public interface IProviderValidation
     {
-        IPaymentProvider GetValidPaymentProviderByType(ProviderType providerType);
+        PaymentProvider GetValidPaymentProviderByType(ProviderType providerType);
         Task<Provider> GetValidProviderByIdAsync(IUnitOfWork unitOfWork, long Id);
     }
 }

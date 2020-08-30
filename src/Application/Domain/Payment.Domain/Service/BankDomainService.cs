@@ -1,4 +1,5 @@
 ﻿using Bermuda.Core.Repository.UnitOfWork;
+using Payment.Core.Contract.Payment;
 using Payment.Domain.Entity;
 using Payment.Domain.Repository;
 using Payment.Domain.Validation;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Payment.Domain.Service
 {
-    public class BankDomainService
+    public class BankDomainService : IBankBinQuery
     {
         private readonly IBankValidation bankValidation;
         private readonly IBankBinRepository bankBinRepository;
@@ -17,6 +18,11 @@ namespace Payment.Domain.Service
         {
             this.bankValidation = bankValidation;
             this.bankBinRepository = bankBinRepository;
+        }
+
+        public Task<GetBankByBinNumberResponse> GetBankByBinNumberAsync(GetBankByBinNumberRequest request)
+        {
+            throw new System.NotImplementedException();
         }
 
         public async Task<BankBin> GetValidBankBinByCardNumberAsync(

@@ -42,12 +42,12 @@ namespace Payment.AppService.Service
 
                 Provider provider = await providerDomainService.GetValidProviderByIdAsync(unitOfWork, bankProvider.ProviderId);
 
-                IPaymentProvider paymentProvider = providerDomainService.GetValidPaymentProviderByType(provider.ProviderType);
+                PaymentProvider paymentProvider = providerDomainService.GetValidPaymentProviderByType(provider.ProviderType);
 
                 PaymentRequest paymentRequest = classMapper.Map<DoPaymentRequest, PaymentRequest>(request);
                 paymentRequest.SetConfiguration(bankProvider.Configuration);
 
-                paymentProvider.DoPayment(paymentRequest);
+                paymentProvider.DoPaymentAsync(paymentRequest);
 
                 unitOfWork.Commit();
             }

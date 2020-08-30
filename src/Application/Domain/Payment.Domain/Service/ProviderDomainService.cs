@@ -21,7 +21,7 @@ namespace Payment.Domain.Service
             this.providerRepository = providerRepository;
         }
 
-        public IPaymentProvider GetValidPaymentProviderByType(
+        public PaymentProvider GetValidPaymentProviderByType(
             ProviderType providerType)
         {
             return providerValidation.GetValidPaymentProviderByType(providerType);

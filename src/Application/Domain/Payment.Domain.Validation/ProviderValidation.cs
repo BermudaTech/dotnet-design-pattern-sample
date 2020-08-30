@@ -12,20 +12,20 @@ namespace Payment.Domain.Validation
 {
     public class ProviderValidation : IProviderValidation
     {
-        private readonly IEnumerable<IPaymentProvider> paymentProviders;
+        private readonly IEnumerable<PaymentProvider> paymentProviders;
         private readonly IProviderRepository providerRepository;
 
         public ProviderValidation(
-            IEnumerable<IPaymentProvider> paymentProviders,
+            IEnumerable<PaymentProvider> paymentProviders,
             IProviderRepository providerRepository)
         {
             this.paymentProviders = paymentProviders;
             this.providerRepository = providerRepository;
         }
 
-        public IPaymentProvider GetValidPaymentProviderByType(ProviderType providerType)
+        public PaymentProvider GetValidPaymentProviderByType(ProviderType providerType)
         {
-            IPaymentProvider paymentProvider = paymentProviders.Where(x => x.ProviderType == providerType).FirstOrDefault();
+            PaymentProvider paymentProvider = paymentProviders.Where(x => x.ProviderType == providerType).FirstOrDefault();
             if (paymentProvider == null)
             {
                 throw new BusinessException("Payment provider not found!");

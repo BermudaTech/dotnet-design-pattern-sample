@@ -30,6 +30,7 @@ namespace Payment.Test.AppService
     {
         private readonly Mock<ILogger> logger;
         private readonly Mock<IJsonSerializer> jsonSerializer;
+        private readonly Mock<IXmlSerializer> xmlSerializer;
         private readonly IClassMapper classMapper;
         private readonly IUnitOfWorkFactory unitOfWorkFactory;
         private readonly Mock<IHttpContextAccessor> httpContextAccessor;
@@ -37,6 +38,7 @@ namespace Payment.Test.AppService
         private readonly IBankBinRepository bankBinRepository;
         private readonly IBankProviderRepository bankProviderRepository;
         private readonly IBankValidation bankValidation;
+        private readonly IBankBinQuery bankBinQuery;
         private readonly BankDomainService bankDomainService;
         private readonly IProviderRepository providerRepository;
         private readonly IProviderValidation providerValidation;
@@ -47,13 +49,15 @@ namespace Payment.Test.AppService
         {
             this.logger = new Mock<ILogger>();
             this.jsonSerializer = new Mock<IJsonSerializer>();
+            this.xmlSerializer = new Mock<IXmlSerializer>();
+            this.bankBinQuery = new BankDomainService(bankValidation, bankBinRepository);
 
-            IEnumerable<IPaymentProvider> paymentProviders = new List<IPaymentProvider>
+            IEnumerable<PaymentProvider> paymentProviders = new List<PaymentProvider>
             {
-                new ESTPaymentIntegration(logger.Object,jsonSerializer.Object),
-                new IPARAPaymentIntegration(logger.Object,jsonSerializer.Object),
-                new MPIPaymentIntegration(logger.Object,jsonSerializer.Object),
-                new PAYTENPaymentIntegration(logger.Object,jsonSerializer.Object)
+                new ESTPaymentIntegration(logger.Object,jsonSerializer.Object,xmlSerializer.Object,bankBinQuery),
+                new IPARAPaymentIntegration(logger.Object,jsonSerializer.Object,xmlSerializer.Object,bankBinQuery),
+                new MPIPaymentIntegration(logger.Object,jsonSerializer.Object,xmlSerializer.Object,bankBinQuery),
+                new PAYTENPaymentIntegration(logger.Object,jsonSerializer.Object,xmlSerializer.Object,bankBinQuery)
             };
 
             var mapperConfiguration = new MapperConfiguration(cfg =>
